@@ -1,0 +1,137 @@
+main {
+    width: 90vw;
+    margin: auto;
+}
+
+* {
+    box-sizing: border-box
+}
+
+#videoConteiner {
+    margin: auto;
+    width: fit-content;
+}
+
+#videoConteiner h2 {
+    width: fit-content;
+    margin: auto;
+}
+
+#video {
+    width: 500px;
+    height: 200px;
+    border: blue 3px double;
+}
+
+#products {
+    margin: auto;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+#products #search h2 {
+    width: fit-content;
+    margin: auto;
+}
+
+#searchbar {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#featuredProducts h2 {
+    width: fit-content;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.carousel-item {
+    height: 32rem;
+    
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+#item1{
+    background-color: rgba(179, 94, 46, 0.56);
+}
+#item2{
+    background-color: rgba(85, 247, 64, 0.56);
+}
+#item3{
+    background-color: rgba(252, 14, 14, 0.56);
+}
+.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 50px;
+}
+
+#myCarousel {
+    width: 700px;
+    margin: auto;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 500px;
+    margin-top: 20px;
+}
+
+
+#space1{
+width: 30%;
+height: 100%;
+}
+
+#space2{
+    width: 30%;
+    height: 48%;
+}
+
+#space3{
+    width: 30%;
+    height: 48%;
+}
+
+article{
+    
+    height: 100%
+}
+
+article img{
+    height: 40%;
+    width: 100%;
+}
+
+article h1 {
+    height: 10%;
+}
+article p {
+    height: 10%;
+}
+article a {
+    margin: auto;
+    height: auto;
+    position: relative;
+    top: -15px;
+}
+#launch{
+    margin-top: 40px;
+}
+
+#launch h2{
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+}
+#launch p{
+    width: fit-content;
+    margin: auto;
+}
