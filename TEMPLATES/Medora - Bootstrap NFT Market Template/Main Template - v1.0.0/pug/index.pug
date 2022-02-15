@@ -1,0 +1,197 @@
+extends _pug-includes/layout
+
+block vars 
+    - var home = true
+
+block content
+    
+    // HERO SECTION 
+    section.hero.bg-dark.py-5
+        #particles-js
+        .container.py-5.z-index-20.position-relative.mt-5
+            .row.align-items-center.mt-5
+                // Text Column 
+                .col-lg-5
+                    h1 Create, sell and collect digital items.
+                    p.text-muted Unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique and therefore not interchangeable
+                    a.btn.btn-gradient-primary(href="explore-3.html") Explore 
+                    .d-flex.align-items-center.pt-5
+                        each val in [['942', 'Collectibles'], ['27k', 'Auctions'], ['4k', 'NFT']]
+                            .me-4.text-center
+                                p.h1.mb-0 #{val[0]}
+                                span.text-muted #{val[1]}
+                
+                // Illustration Column 
+                .col-lg-6.ms-auto.d-none.d-lg-block
+                    img.img-fluid.mx-auto(src=" img/hero/illu-3.png", alt="..")
+    
+
+
+    // WALLETS SECTION 
+    section.py-5
+        .container.pt-5
+            .row.gy-4
+                each val in [['1', 'Metamask'], ['2', 'Bitski'], ['3', 'Fortmatic'], ['4', 'WalletConnect'], ['5', 'Coinbase Wallet'], ['6', 'Arkane']]
+                    // Wallet Item 
+                    .col-lg-2.col-md-4.col-6
+                        .card.text-center
+                            .card-body
+                                img.img-fluid.mb-3(src=`img/wallet/${val[0]}.png`, alt="...", width="50")
+                                h2.h6.mb-0
+                                    a.stretched-link.text-reset.text-decoration-none(href="wallet.html")  #{val[1]}
+
+    
+
+    // NEW ITEMS SECTION 
+    section.py-5
+        .container
+
+            // Section Header 
+            header.mb-5
+                .row
+                    .col-lg-6
+                        h2 New items
+                        p.text-muted.text-sm.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse quis sed, necessitatibus nostrum mollitia.
+            
+            // Items Slider
+            .swiper.items-slider
+                .swiper-wrapper
+                    .swiper-slide.p-2
+                        +nftItem('item-1.jpg', 'author-1.jpg', 'A little tribute to tears', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-2.jpg', 'author-2.jpg', 'Swag never gets out of style', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-3.jpg', 'author-3.jpg', 'Funky figure illustration', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-4.jpg', 'author-4.jpg', 'Fantasizing promoting painting', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-5.jpg', 'author-1.jpg', 'A beautiful frog', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-6.jpg', 'author-2.jpg', 'Tlaloc aztec deity', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-7.jpg', 'author-3.jpg', 'Nerdy cute girl', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                    .swiper-slide.p-2
+                        +nftItem('item-8.jpg', 'author-4.jpg', 'Portrait study', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+
+                // Slider Navigation
+                .swiper-button-prev
+                    i.las.la-arrow-left.text-gray-300
+                .swiper-button-next
+                    i.las.la-arrow-right.text-gray-300
+
+    
+    // TOP SELLERS SECTION
+    section.py-5
+        .container.pb-5
+
+            // Section Header
+            header.mb-5
+                .row
+                    .col-lg-6
+                        h2 Top sellers
+                        p.text-muted.text-sm.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ducimus amet blanditiis ad quasi repudiandae vero facere veniam inventore.
+
+            // Top Sellers Grid
+            .row.gy-3
+                each val, index in [['Monica Lucas', '3.2 ETH'], ['Mamie Barnett', '2.8 ETH'], ['Nicholas Daniels', '2.5 ETH'], ['Lori Hart', '2.2 ETH'], ['Jimmy Wright', '1.9 ETH'], ['Karla Sharp', '1.6 ETH'], ['Gayle Hicks', '1.5 ETH'], ['Claude Banks', '1.3 ETH'], ['Franklin Greer', '0.9 ETH'], ['Stacy Long', '0.8 ETH'], ['Ida Chapman', '0.6 ETH'], ['Fred Ryan', '0.5 eth']]
+
+                    // Top Seller Item
+                    .col-xl-3.col-lg-4.col-md-6
+                        .card.bd-3.card-hover-minimal
+                            .card-body
+                                a.d-flex.align-items-center.text-reset.text-decoration-none.stretched-link(href="#") 
+                                    p.fw-bold.text-primary.mb-0 #{index+1}.
+                                    .position-relative
+                                        img.img-fluid.rounded-circle.ms-3(src=`img/authors/author-${index+1}.jpg`, alt="...", width="60")
+                                        .author-img-badge.bg-primary.text-white
+                                            i.las.la-check-double.la-xs
+                                    .ms-3
+                                        h3.h6.mb-1 #{val[0]}
+                                        p.text-sm.text-muted.mb-0 #{val[1]}
+
+
+    // HOT COLLECTIONS SECTIONS
+    section.py-5.bg-dark
+        .container.py-5
+
+            // Section Header
+            header.mb-5
+                .row
+                    .col-lg-6
+                        h2 Hot Collections
+                        p.text-muted.text-sm.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse quis sed, necessitatibus nostrum mollitia.
+
+            // Collections Grid
+            .row.gy-5
+                .col-lg-3
+                    +collItem('coll-2.jpg', 'Sleckthify', 'author-1.jpg', 'ERC-126', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-3.jpg', 'Virtuland', 'author-2.jpg', 'ERC-40', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-4.jpg', 'Absraction', 'author-3.jpg', 'ERC-129', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-5.jpg', 'Patternlicious', 'author-4.jpg', 'ERC-96', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-6.jpg', 'Virtuland', 'author-5.jpg', 'ERC-40', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-2.jpg', 'Absraction', 'author-6.jpg', 'ERC-129', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-3.jpg', 'Patternlicious', 'author-7.jpg', 'ERC-96', 'card-hover-image')
+                .col-lg-3
+                    +collItem('coll-4.jpg', 'Patternlicious', 'author-8.jpg', 'ERC-96', 'card-hover-image')
+
+
+
+    // LIVE AUCTIONS SECTION
+    section.py-5
+        .container.py-5
+
+            // Section Header
+            header.mb-5
+                .row
+                    .col-lg-6
+                        h2 Live Auctions
+                        p.text-muted.text-sm.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse quis sed, necessitatibus nostrum mollitia.
+
+            // Auctions Slider
+            .swiper.auctions-slider
+                .swiper-wrapper
+                    .swiper-slide.p-2
+                        +auctionItem('item-12.jpg', 'author-1.jpg', 'Feeding time', '0.08 ETH', '1/20', '14-12-2021', '12:00', '1', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-11.jpg', 'author-2.jpg', 'Metaverse Goddess', '0.05 ETH', '1/22', '18-11-2021', '12:00', '2', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-10.jpg', 'author-3.jpg', 'Funky fashion', '0.06 ETH', '1/11', '15-1-2022', '12:00', '3', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-9.jpg', 'author-4.jpg', 'Modern abstract art', '0.03 ETH', '1/15', '14-7-2022', '12:00', '4', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-8.jpg', 'author-1.jpg', 'Portrait study', '0.08 ETH', '1/20', '14-12-2021', '12:00', '5', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-7.jpg', 'author-2.jpg', 'Nerdy cute girl', '0.05 ETH', '1/22', '18-11-2021', '12:00', '6', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-6.jpg', 'author-3.jpg', 'Tlaloc aztec deity', '0.06 ETH', '1/11', '15-1-2022', '12:00', '7', '')
+                    .swiper-slide.p-2
+                        +auctionItem('item-5.jpg', 'author-4.jpg', 'A beautiful frog', '0.03 ETH', '1/15', '14-7-2022', '12:00', '8', '')
+
+                // Slider Navigation
+                .swiper-button-prev
+                    i.las.la-arrow-left.text-gray-300
+                .swiper-button-next
+                    i.las.la-arrow-right.text-gray-300
+    
+
+    //- Preloader
+    include _pug-includes/preloader.pug
+
+
+    // SCROLL TO TOP BUTTON
+    .scroll-top-btn.d-flex.align-items-center.shadow
+        span Top
+        i.las.la-arrow-right.ms-2
+
+
+    //- Bootstrap Toast
+    include _pug-includes/toast.pug
+
+    //- Exit Modal
+    include _pug-includes/exit-modal.pug

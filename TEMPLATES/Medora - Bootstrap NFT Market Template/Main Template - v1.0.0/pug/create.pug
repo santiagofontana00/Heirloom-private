@@ -1,0 +1,126 @@
+extends _pug-includes/layout
+
+block vars 
+    - var createItem = true
+    - var heroPage = true
+    - var pageTitle = 'Create Item'
+
+block content
+
+    //- Hero Section 
+    include _pug-includes/page-hero.pug
+
+
+    // CREATE ITEM SECTION 
+    section.py-5
+        .container.py-5
+            .row.g-5
+                .col-lg-8
+
+                    // Upload File Header 
+                    .d-flex.align-items-center.mb-4
+                        .icon.icon-md.me-2.flex-shrink-0.bg-primary.rounded-sm.text-white
+                            i.las.la-cloud-upload-alt
+                        h2.h5.mb-0 Upload file
+
+                    // Upload File Form 
+                    form#demo-upload.dropzone.rounded.bg-dark.d-flex.justify-content-center.mb-5(action='/upload')
+                        .dz-message.py-5
+                            i.las.la-image.la-3x.text-muted
+                            p.text-muted Drop files here or click to upload.
+
+                    // Select Method Header
+                    .d-flex.align-items-center.mb-4
+                        .icon.icon-md.me-2.flex-shrink-0.bg-primary.rounded-sm.text-white
+                            i.las.la-th-large
+                        h2.h5.mb-0 Select Method
+
+                    // Select Method Form 
+                    form.p-4.p-lg-5.bg-dark(action="#!")  
+
+                        // Form Navigation 
+                        .item-type
+                            .btn-group.flex-column.flex-md-row.w-100(role='group' aria-label='Basic radio toggle button group')
+                                input.btn-check#fixedPrice(type='radio' name='btnradio' checked)
+                                label.btn.btn-outline-secondary.m-1.rounded-sm.text-gray-400.flex-fill(for='fixedPrice')
+                                    i.text-primary.las.la-tag.me-2
+                                    | Fixed Price
+
+                                input.btn-check#timedAuction(type='radio' name='btnradio')
+                                label.btn.btn-outline-secondary.m-1.rounded-sm.text-gray-400.flex-fill(for='timedAuction')
+                                    i.text-primary.las.la-hourglass-half.me-2
+                                    | Timed Auction
+
+                                input.btn-check#openForBids(type='radio' name='btnradio')
+                                label.btn.btn-outline-secondary.m-1.rounded-sm.text-gray-400.flex-fill(for='openForBids')
+                                    i.text-primary.las.la-user-friends.me-2
+                                    | Open for Bids       
+
+                        // Form Elements 
+                        .row.gy-3.py-4
+
+                            // Timed Auction Method Elements 
+                            .col-12(data-form='timedAuction')
+                                .row.gy-3
+                                    .col-lg-12
+                                        label.form-label.text-gray-400(for="maxBid")  Maximum Bid
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-hand-holding-usd
+                                            input.form-control.shadow-0.border-start-0.bd-dark-lighter.bg-none(type="text", autocomplete="off", name='maxBid' id='maxBid', placeholder="Enter maximum bid")
+                                    .col-lg-6
+                                        label.form-label.text-gray-400(for="starDate")  Starting Date
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-hourglass-half
+                                            input.form-control.shadow-0.border-start-0.bd-dark-lighter.bg-none(type="date", name='starDate', id='starDate')
+                                    .col-lg-6
+                                        label.form-label.text-gray-400(for="endDate")  Ending Date
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-hourglass-half
+                                            input.form-control.shadow-0.bd-dark-lighter.bg-none.border-start-0(type="date", name='endDate', id='endDate')
+
+                            // Fixed Price Method Elements 
+                            .col-12(data-form='fixedPrice')
+                                .row
+                                    .col-lg-12
+                                        label.form-label.text-gray-400(for="price")  Price
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-hand-holding-usd
+                                            input.form-control.shadow-0.border-start-0.bd-dark-lighter.bg-none(type="text", autocomplete="off", name='price' id='price', placeholder="Enter price for one item (ETH)")
+
+                            // Open For Bids Method Elements 
+                            .col-12.mb-2(data-form='openForBids')            
+                                .row.gy-3
+                                    .col-lg-12
+                                        label.form-label.text-gray-400(for="title")  Title
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-user-edit
+                                            input.form-control.shadow-0.border-start-0.bd-dark-lighter.bg-none(type="text", autocomplete="off", name='title' id='title', placeholder="e.g. Crypto Funk")
+                                    .col-lg-12
+                                        label.form-label.text-gray-400(for="description")  Description
+                                        textarea.form-control.shadow-0.bd-dark-lighter.bg-none(rows='3', name='description', id='description', placeholder="e.g. This is a very cool item")
+                                    .col-lg-12
+                                        label.form-label.text-gray-400(for="royalties")  Royalties
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0.bd-dark-lighter.bg-none
+                                                i.text-primary.las.la-percentage
+                                            input.form-control.shadow-0.border-start-0.bd-dark-lighter.bg-none(type='text', autocomplete="off", name='royalties' id='royalties', placeholder="Suggested: 0, 10%, 20%, 30%, maximum 70%")
+                            
+                            // Submit 
+                            .col-12
+                                button.btn.btn-primary(type="submit")
+                                    i.las.la-plus-circle.me-2
+                                    | Create Item
+
+                                
+                // Preview Item 
+                .col-lg-4
+                    .d-flex.align-items-center.mb-4
+                        .icon.icon-md.me-2.flex-shrink-0.bg-primary.rounded-sm.text-white
+                            i.las.la-eye
+                        h2.h5.mb-0 Preview Item
+                    +nftItem('static-2.jpg', 'author-1.jpg', 'Sunny day', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', '')

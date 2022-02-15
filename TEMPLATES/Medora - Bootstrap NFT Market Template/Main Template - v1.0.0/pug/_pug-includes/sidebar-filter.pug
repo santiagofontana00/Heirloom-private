@@ -1,0 +1,32 @@
+.card.rounded.mb-4
+    .card-body.p-4
+        h6.mb-4 Category
+        ul.mb-0.list-unstyled
+            each val, index in [['all', 'All'], ['art', 'Art'], ['music', 'Music'], ['domainNames', 'Domain Names'], ['virtualWorlds', 'Virtual Worlds'], ['tradingCards', 'Trading Cards'], ['collectibles', 'Collectibles'], ['utility', 'Utility']]
+                li.mb-1
+                    .form-check
+                        if (index == 0)
+                            input.form-check-input(id=val[0], type="checkbox", name=val[0], checked)
+                        else 
+                            input.form-check-input(id=val[0], type="checkbox", name=val[0])
+                        label.form-check-label.text-muted(for=val[0]) #{val[1]} 
+
+.card.rounded.mb-4
+    .card-body.p-4
+        h6.mb-4 Sort by
+        ul.mb-0.list-unstyled
+            each val in [['newest', 'Newest'], ['oldest', 'Oldest'], ['priceAsc', 'Price - Low to High'], ['priceDsc', 'Price - High to Low'], ['auctions', 'Auctions Only']]
+                li.mb-1
+                    .form-check
+                        input.form-check-input(id=val[0], type="checkbox", name=val[0])
+                        label.form-check-label.text-muted(for=val[0]) #{val[1]} 
+
+.card.rounded
+    .card-body.p-4
+        h6.mb-4 Language
+        ul.mb-0.list-unstyled
+            each val in [['english', 'English'], ['spanish', 'Spanish'], ['french', 'French'], ['portuguese', ' Portuguese'], ['russian', 'Russian']]
+                li.mb-1
+                    .form-check
+                        input.form-check-input(id=val[0], type="checkbox", name=val[0])
+                        label.form-check-label.text-muted(for=val[0]) #{val[1]} 

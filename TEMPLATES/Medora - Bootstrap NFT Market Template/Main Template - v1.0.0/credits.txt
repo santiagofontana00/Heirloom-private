@@ -1,0 +1,47 @@
+=============================================================
+    PLUGINS USED 
+=============================================================
+
+    - Bootstrap 5    -    https://getbootstrap.com
+
+    - Line Awesome   -    https://icons8.com/line-awesome
+
+    - Swiper.js      -    https://swiperjs.com/
+
+    - Countdown.js   -    https://www.cssscript.com/easy-datetime-countdown-timer-countdown-js/
+
+    - Dropzone       -    https://github.com/dropzone/dropzone
+
+    - Mixitup        -    https://www.kunkalabs.com/mixitup/
+
+    - Choices.js     -    https://github.com/Choices-js/Choices
+
+    - Particles.js   -    https://vincentgarreau.com/particles.js/
+
+
+
+=============================================================
+    GOOGLE FONT USED
+=============================================================
+
+    - Sarabun -   https://fonts.google.com/specimen/Sarabun
+
+
+=============================================================
+    IMAGES USED 
+=============================================================
+
+    - Images used in this template are dribble shots and they're only for demo purpose.
+    - https://dribbble.com/shots/15350165-Swag-never-gets-out-of-style
+    - https://dribbble.com/shots/15389382-Top-6-Digital-Design-Agencies-in-Eastern-Europe
+    - https://dribbble.com/shots/16048520-Michael
+    - https://dribbble.com/shots/16495930-Tlaloc-Aztec-Deity
+    - https://dribbble.com/shots/15511347-Frog
+    - https://dribbble.com/shots/14805832-Style
+    - https://dribbble.com/shots/8159457-fantasizing
+    - https://dribbble.com/shots/16327298-Feeding-time
+    - https://dribbble.com/shots/13891871-Bubble-gum-tears
+    - https://dribbble.com/shots/16380896-Metaverse-Goddess
+    - https://dribbble.com/shots/7226813-Funky
+    - https://dribbble.com/shots/16254696-Portrait
+    - https://dribbble.com/shots/15571945-Girl

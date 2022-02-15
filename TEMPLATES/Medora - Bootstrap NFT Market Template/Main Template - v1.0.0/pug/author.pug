@@ -1,0 +1,98 @@
+extends _pug-includes/layout
+
+block vars 
+    - var author = true
+    - var heroPage = true
+    - var pageTitle = 'Author Details'
+
+block content
+
+    //- Hero Section 
+    include _pug-includes/page-hero.pug
+
+
+    // AUTHOR SECTION 
+    section.py-5
+        .container.py-5
+            .row.gy-5
+
+                // Author Info Block 
+                .col-lg-3.col-md-5
+                    .card.rounded-xl.bd-3.bd-2.shadow-lg.overflow-hidden
+                        .card-body.p-0
+
+                            // Author Image & Header
+                            .position-relative.mb-4
+                                .position-absolute.top-100.start-50.translate-middle
+                                    img.img-fluid.rounded-circle.p-1.bg-dark(src=`img/authors/author-1.jpg`, alt="...", width="70")
+                                    span.icon.bg-primary.text-white.position-absolute.top-50.start-100.translate-middle
+                                        i.las.la-check-double
+
+                                img.img-fluid.rounded-xl.w-100(src="img/items/item-4.jpg", alt="...")
+
+                            // Author Title & Details
+                            .p-4.text-center
+                                h5.mb-1 Monica Lucas
+                                p.text-sm.text-primary.mb-0 @monica
+                                p.text-sm.text-muted Artist signed NFTs
+
+                                // Author Id
+                                .py-2.px-3.bg-body.rounded-pill.position-relative.text-start.mb-3
+                                    input.text-sm.text-muted.id-text.form-control.shadow-0.bg-none.border-0.py-0(type='text', value='DdzFFzCqrhshMSDdzFFzCqrhshMSDdzFFzCqrhshMSDdzFFzCqrhshMS')
+                                    button.btn.btn-link.btn-sm.p-0.shadow-0.position-absolute.top-50.end-0.translate-middle(data-bs-toggle='tooltip', data-bs-placement='top', title="copy text", type="button", onclick="copyIdText()") 
+                                        i.las.la-file.bg-body.p-1
+                                
+                                // Author Social Links
+                                ul.list-inline.mb-0
+                                    each val in ['lab la-facebook-f', 'lab la-pinterest', 'lab la-twitter', 'las la-link']
+                                        li.list-inline-item
+                                            a.social-link.social-link-sm.bg-hover-primary(href="#") 
+                                                i(class=val)
+
+                            // Separator 
+                            .bd-1
+
+                            // Following & Followers
+                            .p-4.d-flex.align-items-center.justify-content-between
+                                .ms-1
+                                    p.h6.mb-0 569 
+                                    span.text-muted.text-xs Followers
+                                .ms-1
+                                    p.h6.mb-0 389 
+                                    span.text-muted.text-xs Following
+                                .ms-1.text-end
+                                    button.btn.btn-gradient-primary.btn-sm.px-3(type="button") Follow  
+
+                            // Separator
+                            .bd-1
+
+                            // About Author
+                            .p-4
+                                h6 About me
+                                p.text-xs.text-muted.mb-0 Lorem ipsum dolor sit amet consec adipisicing elit. Blanditiis voluptas esse sunt enim suscipit error harum quos, deserunt.
+
+
+                // Author Items Grid
+                .col-lg-9.col-md-7
+
+                    // Grid Filter
+                    .controls.mb-4.d-flex.bg-dark.rounded.bd-3
+                        button.mixitup-control.m-1.flex-fill(type='button' data-filter='all')  All
+                        button.mixitup-control.m-1.flex-fill(type='button' data-filter='.created')  Created
+                        button.mixitup-control.m-1.flex-fill(type='button' data-filter='.collected')  Collected
+
+
+                    // Items Grid
+                    .row.mixitUpContainer.gy-4
+                        .col-xl-4.col-md-12.mix.created
+                            +nftItem('item-1.jpg', 'author-1.jpg', 'A little tribute to tears', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                        .col-xl-4.col-md-12.mix.collected
+                            +nftItem('item-2.jpg', 'author-2.jpg', 'Swag never gets out of style', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                        .col-xl-4.col-md-12.mix.created
+                            +nftItem('item-3.jpg', 'author-3.jpg', 'Funky figure illustration', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                        .col-xl-4.col-md-12.mix.collected
+                            +nftItem('item-4.jpg', 'author-4.jpg', 'Fantasizing promoting painting', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                        .col-xl-4.col-md-12.mix.created
+                            +nftItem('item-5.jpg', 'author-1.jpg', 'A beautiful frog', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                        .col-xl-4.col-md-12.mix.utility
+                            +nftItem('item-6.jpg', 'author-2.jpg', 'Tlaloc aztec deity', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')

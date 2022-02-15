@@ -1,0 +1,48 @@
+// NAVBAR 
+nav.navbar.navbar-expand-lg.navbar-dark.fixed-top#navbar
+    .container
+
+        // Navbar Brand 
+        a.navbar-brand(href='index.html')
+            img.img-fluid(src="img/logo.svg", alt="CR", width="140")
+        
+        // Navbar Toggler 
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        
+        // Navbar Collapse 
+        .collapse.navbar-collapse#navbarSupportedContent
+            ul.navbar-nav.ms-auto.mb-2.mb-lg-0.flex-lg-row.align-items-lg-center
+                // Navigation Item 
+                li.nav-item
+                    a.nav-link(aria-current='page', href='index.html', class=(home ? 'active' : '')) Home
+
+                // Navigation Dropdown 
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='exploreDropdown', href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false', class=(explore ? 'active' : '')) Explore
+                    ul.dropdown-menu.dropdown-menu-dark.dropdown-menu-end.fade-down(aria-labelledby='exploreDropdown')
+                        each val in [['Explore 1', 'explore'], ['Explore 2', 'explore-2'], ['Explore 3', 'explore-3']]
+                            li
+                                a.dropdown-item(href=`${val[1]}.html`) #{val[0]}
+
+                // Navigation Dropdown
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='pagesDropdown', href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false', class=(pages ? 'active' : '')) Pages
+                    ul.dropdown-menu.dropdown-menu-dark.dropdown-menu-end.fade-down(aria-labelledby='pagesDropdown')
+                        each val in [['Auctions', 'auctions'], ['Contact', 'contact'], ['Author', 'author'], ['Wallet', 'wallet'], ['Create', 'create'], ['Login', 'login']]
+                            li
+                                a.dropdown-item(href=`${val[1]}.html`) #{val[0]}
+
+                // Navigation Item 
+                li.nav-item
+                    a.nav-link(aria-current='page', href='auctions.html', class=(auctions ? 'active' : '')) Auctions
+
+                // Navigation Item 
+                li.nav-item
+                    a.nav-link(aria-current='page', href='contact.html', class=(contact ? 'active' : '')) Contact
+
+                // Navigation Item 
+                li.nav-item.ms-lg-2
+                    a.btn.btn-gradient-primary.btn-sm.px-3.d-lg-flex.align-items-center(href="wallet.html", class=(wallet ? 'active' : '')) 
+                        i.las.la-wallet.me-2.transform-none
+                        | Connect wallet 

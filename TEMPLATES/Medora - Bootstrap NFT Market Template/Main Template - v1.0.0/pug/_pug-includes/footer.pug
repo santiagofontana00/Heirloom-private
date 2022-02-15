@@ -1,0 +1,43 @@
+// MAIN FOOTER
+footer.footer.bg-map.bg-dark
+    .container.py-5.z-index-20
+        .row.pt-5
+            .col-lg-3.col-md-6.mb-4.mb-lg-0
+                h6 Marketplace
+                ul.list-unstyled.text-muted.mb-0
+                    each val in ['All NFTs', 'Art', 'Music', 'Domain Names', 'Virtual World']
+                        li.mb-1
+                            a.text-sm.text-reset(href='#') #{val}
+            .col-lg-3.col-md-6.mb-4.mb-lg-0
+                h6 Resources
+                ul.list-unstyled.text-muted.mb-0
+                    each val in ['Help Center', 'Partners', 'Suggestions', 'Discord', 'Docs']
+                        li.mb-1
+                            a.text-sm.text-reset(href='#') #{val}
+
+            .col-lg-3.col-md-6.mb-4.mb-lg-0
+                h6 Community
+                ul.list-unstyled.text-muted.mb-0
+                    each val in ['Community', 'Documentation', 'Brand Assets', 'Blog', 'Forum']
+                        li.mb-1
+                            a.text-sm.text-reset(href='#') #{val}
+            .col-lg-3.col-md-6.mb-4
+                h6 Newsletter
+                p.text-sm.text-muted Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sint facilis.
+
+                form(action="#!") 
+                    .input-group.shadow-sm.bg-body.rounded
+                        input.form-control.border-0.bg-none.shadow-0(type="email", name="email", autocomplete="off", placeholder="Enter your email address...")
+                        button.btn.btn-primary.btn-sm(type='submit')
+                            i.las.la-paper-plane
+    
+    // Separator
+    .container
+        .pt-1.bg-body.rounded-pill
+
+    // Copyrights
+    .container.py-4
+        .row.text-center
+            p.text-muted.text-sm.mb-0
+                    | © 2021 Medora.io All rights reserved 
+                    span.text-primary BootdevTemplates.

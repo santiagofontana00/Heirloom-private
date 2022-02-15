@@ -1,0 +1,51 @@
+extends _pug-includes/layout
+
+block vars 
+    - var explore = true
+    - var heroPage = true
+    - var pageTitle = 'Explore'
+
+block content
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+
+
+    // EXPLORE SECTION
+    section.py-5
+        .container.pt-5
+
+            // Explore Filter
+            include _pug-includes/filter.pug
+
+            // Items Grid
+            .row.gy-4.mb-5
+                .col-xl-3.col-lg-4.col-md-6
+                     +nftItem('item-1.jpg', 'author-1.jpg', 'A little tribute to tears', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-2.jpg', 'author-2.jpg', 'Swag never gets out of style', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-3.jpg', 'author-3.jpg', 'Funky figure illustration', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-4.jpg', 'author-4.jpg', 'Fantasizing promoting painting', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-5.jpg', 'author-1.jpg', 'A beautiful frog', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-6.jpg', 'author-2.jpg', 'Tlaloc aztec deity', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-7.jpg', 'author-3.jpg', 'Nerdy cute girl', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6
+                    +nftItem('item-8.jpg', 'author-4.jpg', 'Portrait study', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+
+            // Pagination
+            nav(aria-label='Page navigation example')
+                ul.pagination.mb-0.justify-content-center
+                    li.page-item
+                        a.page-link(href='#!' aria-label='Previous')
+                            span(aria-hidden='true') «
+                    each val, index in [1, 2, 3, 4, 5, 6]
+                        li.page-item(class=(index == 2 ? 'active' : ''))
+                            a.page-link(href='#!') #{val}
+                    li.page-item
+                        a.page-link(href='#!' aria-label='Next')
+                            span(aria-hidden='true') »

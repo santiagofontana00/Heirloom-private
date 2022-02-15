@@ -1,0 +1,30 @@
+extends _pug-includes/layout
+
+block vars 
+    - var wallet = true
+    - var heroPage = true
+    - var pageTitle = 'Wallet'
+
+block content
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+
+
+    // WALLETS SECTIONS 
+    section.py-5
+        .container.py-5
+            .row.gy-4
+                each val, index in [['1', 'Metamask'], ['2', 'Bitski'], ['3', 'Fortmatic'], ['4', 'WalletConnect'], ['5', 'Coinbase Wallet'], ['6', 'Arkane']]
+                    // Wallet 
+                    .col-lg-4.col-sm-6
+                        .card
+                            .card-body.position-relative.p-4.p-lg-5
+                                if (index == 0 || index == 5)
+                                    .p-3.position-absolute.top-0.end-0
+                                        .badge.bg-primary Most Popular
+                                img.img-fluid.mb-3(src=`img/wallet/${val[0]}.png`, alt="...", width="50")
+                                h2.h6.mb-2
+                                    a.stretched-link.text-reset.text-decoration-none(href="login.html")  #{val[1]}
+                                p.text-muted.text-sm.mb-0 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati nostrum qui soluta autem vel est ad quidem minima.
+

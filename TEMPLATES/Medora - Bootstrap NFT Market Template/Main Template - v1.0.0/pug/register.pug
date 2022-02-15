@@ -1,0 +1,70 @@
+extends _pug-includes/layout
+
+block vars 
+    - var register = true
+    - var heroPage = true
+    - var pageTitle = 'Create a new account'
+
+block content 
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+
+
+    // REGISTER SECTION 
+    section.py-5.position-relative
+        .container.py-5            
+            .row
+                .col-lg-8.mx-auto
+
+                    // Register Card 
+                    .card
+                        .card-body.p-4.p-lg-5
+
+                            // Register Form 
+                            form.register-form(action="#") 
+                                .row.gy-3
+                                    .col-lg-6
+                                        label.form-label(for="fullname") Full name
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-user-circle
+                                            input.form-control.shadow-0.border-start-0(type="text", autocomplete="off", name='fullname' id='fullname', placeholder="Enter your Full name")
+                                    .col-lg-6
+                                        label.form-label(for="email")  Email address
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-envelope
+                                            input.form-control.shadow-0.border-start-0(type="email", autocomplete="off", name='email' id='email', placeholder="Enter your email address")
+                                    .col-lg-6
+                                        label.form-label(for="phone")  Phone number
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-phone
+                                            input.form-control.shadow-0.border-start-0(type="text", autocomplete="off", name='phone' id='phone', placeholder="Enter your phone number")
+                                    .col-lg-6
+                                        label.form-label(for="username")  Username
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-at
+                                            input.form-control.shadow-0.border-start-0(type="text", autocomplete="off", name='username' id='username', placeholder="Choose a username")
+                                    .col-lg-6
+                                        label.form-label(for="password")  Password
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-key
+                                            input.form-control.shadow-0.border-start-0(type="password", autocomplete="off", name='password' id='password', placeholder="Enter your password")
+                                    .col-lg-6
+                                        label.form-label(for="passwordAlt")  Retype password
+                                        .input-group
+                                            .input-group-text.border-end-0.pe-0
+                                                i.text-primary.las.la-key
+                                            input.form-control.shadow-0.border-start-0(type="password", autocomplete="off", name='passwordConf' id='passwordAlt', placeholder="Retype your password")
+                                    .col-lg-12.mb-3
+                                        button.btn.btn-primary.w-100(type="submit") 
+                                            i.las.la-user-circle.me-2
+                                            | Create your account
+                                    .col-12.text-center
+                                        p.mb-0.fw-light.text-muted Already registered! 
+                                            a.text-decoration-none(href="login.html")  Sigin now
+                                    

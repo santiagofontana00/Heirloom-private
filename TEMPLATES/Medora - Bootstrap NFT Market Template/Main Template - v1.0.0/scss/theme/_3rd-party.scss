@@ -1,0 +1,154 @@
+/* ==========================================
+    CHOICES.JS
+========================================== */
+.choices {
+    min-width: 10rem !important;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+    padding-right: 1rem !important;
+}
+
+.choices__list--single .choices__item {
+    font-size: 0.9rem;
+    color: lighten($gray-600, 5%) !important;
+}
+
+.choices__list {
+    z-index: 99 !important;
+}
+
+.choices__inner {
+    min-height: unset !important;
+    transition: all 0.3s !important;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        background: lighten($dark, 1.5%) !important;
+        border-color: #1d2231 !important;
+    }
+
+    &.rounded {
+        border-radius: $border-radius !important;
+    }
+
+    &.form-control-sm {
+        padding: $input-btn-padding-y-sm $input-btn-padding-x-sm !important;
+    }
+    &.form-control-lg {
+        padding: $input-btn-padding-y-lg $input-btn-padding-x-lg !important;
+    }
+    &.form-control {
+        padding: $input-btn-padding-y $input-btn-padding-x !important;
+    }
+
+    &.form-select-sm {
+        padding: $input-btn-padding-y-sm $input-btn-padding-x-sm !important;
+    }
+    &.form-select-lg {
+        padding: ($input-btn-padding-y-lg - 0.1055) $input-btn-padding-x-lg !important;
+    }
+    &.form-select {
+        background-image: none !important;
+        &:not(.form-select-sm):not(.form-select-lg) {
+            padding: ($input-btn-padding-y + 0.125) $input-btn-padding-x !important;
+        }
+    }
+}
+
+.choices__list--single {
+    padding: 2px !important;
+}
+
+.choices__placeholder {
+    color: $input-placeholder-color !important;
+    opacity: 1 !important;
+    font-size: 1rem !important;
+}
+
+.choices__list--dropdown {
+    background: rgba(lighten($body-bg, 2%), 0.9) !important;
+    border-color: lighten($body-bg, 4%) !important;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+    &:hover,
+    &:focus {
+        background: darken($body-bg, 1%) !important;
+    }
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background: $primary !important;
+    &:hover,
+    &:focus {
+        background: $primary !important;
+    }
+}
+
+
+/* ==========================================
+    MIXITUP
+========================================== */
+.mixitup-control {
+    padding: 0.5rem 1.5rem;
+    color: darken($gray-500, 15%);
+    border-radius: 0.25rem;
+    background: $card-bg;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: none;
+}
+
+.mixitup-control-active {
+    background: lighten($body-bg, 1.5%);
+    color: $gray-200;
+}
+
+.dropzone {
+    border: 2px dashed lighten($body-bg, 10%);
+    background: none;
+}
+
+
+/* ==========================================
+    SWIPER.JS
+========================================== */
+.swiper {
+    &-wrapper {
+        padding-bottom: 3.5rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 4rem;
+        height: 2.5rem;
+        border-radius: 0.25rem;
+        background: lighten($body-bg, 4%);
+        border: 2px solid $body-bg;
+        box-shadow: 0 1px 3px rgba($dark, 0.2);
+        transition: all 0.3s;
+        bottom: 0;
+        top: auto;
+
+        &::after {
+            font-size: 1rem;
+            color: $gray-200;
+            display: none;
+        }
+
+        &:hover {
+            background: $primary;
+            border-color: darken($primary, 10%);
+        }
+    }
+
+    .swiper-button-prev {
+        right: auto;
+        left: calc(50% - 4rem);
+    }
+    .swiper-button-next {
+        right: auto;
+        left: 50%;
+    }
+}

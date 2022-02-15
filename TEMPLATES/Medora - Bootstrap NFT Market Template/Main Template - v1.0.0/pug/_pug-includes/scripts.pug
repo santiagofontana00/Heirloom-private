@@ -1,0 +1,65 @@
+// JAVASCRIPT FILES 
+script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+script(src='vendor/particles.js/particles.js')
+script(src="vendor/choices.js/public/assets/scripts/choices.js") 
+script(src="vendor/mixitup/mixitup.min.js") 
+script(src="vendor/dropzone/dropzone.js") 
+script(src="vendor/swiper/swiper-bundle.min.js") 
+script(src='js/countdown.js')
+script.
+    /* ======================================
+    IMPORT DIFFERNT PARTICLE.JS JSON FILES
+    ======================================== */
+    function compareViewports(jsonFile, jsonAltFile) {
+        if (window.innerWidth > 768) {
+            particlesJS.load("particles-js", `${jsonFile}`, function () {
+                console.log("particles is moving");
+            });
+        } else {
+            particlesJS.load("particles-js", `${jsonAltFile}`, function () {
+                console.log("particles is moving");
+            });
+        }
+    }
+    // Replace by local JSON file by replace this line with the below line
+    // compareViewports('js/particles.js', 'js/particles.mb.json');
+    compareViewports('js/particles.json', 'js/particles.mb.json');
+
+script(src='js/theme.js')
+
+if (home)
+    script.
+        /* ======================================
+             COUNTER VARIANTS
+        ======================================== */
+        const auc1 = new countdown({ target: ".counter-1" });
+        const auc2 = new countdown({ target: ".counter-2" });
+        const auc3 = new countdown({ target: ".counter-3" });
+        const auc4 = new countdown({ target: ".counter-4" });
+        const auc5 = new countdown({ target: ".counter-5" });
+        const auc6 = new countdown({ target: ".counter-6" });
+        const auc7 = new countdown({ target: ".counter-7" });
+        const auc8 = new countdown({ target: ".counter-8" });
+
+if (itemDetails)
+    script.
+        /* ======================================
+             COUNTER VARIANTS
+        ======================================== */
+        const auc5 = new countdown({ target: ".counter-item" });
+
+if (auctions)
+    script.
+        /* ======================================
+             COUNTER VARIANTS
+        ======================================== */
+        const auc1 = new countdown({ target: ".counter-1" });
+        const auc2 = new countdown({ target: ".counter-2" });
+        const auc3 = new countdown({ target: ".counter-3" });
+        const auc4 = new countdown({ target: ".counter-4" });
+        const auc5 = new countdown({ target: ".counter-5" });
+        const auc6 = new countdown({ target: ".counter-6" });
+        const auc7 = new countdown({ target: ".counter-7" });
+        const auc8 = new countdown({ target: ".counter-8" });
+        const auc = new countdown({ target: ".counter-auc" });
+

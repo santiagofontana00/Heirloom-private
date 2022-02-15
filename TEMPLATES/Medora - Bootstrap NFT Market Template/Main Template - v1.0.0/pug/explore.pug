@@ -1,0 +1,49 @@
+extends _pug-includes/layout
+
+block vars 
+    - var explore = true
+    - var heroPage = true
+    - var pageTitle = 'Explore'
+
+block content
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+
+
+    // EXPLORE SECTION 
+    section.py-5
+        .container.pt-5
+
+            // Filter Navigation 
+            .controls.d-flex.flex-column.flex-md-row.mb-4.p-1.bg-dark.bd-3.rounded
+                button.mixitup-control.flex-fill.m-1(type='button' data-filter='all')  All
+                button.mixitup-control.flex-fill.m-1(type='button' data-filter='.art')  Art
+                button.mixitup-control.flex-fill.m-1(type='button' data-filter='.music')  Music
+                button.mixitup-control.flex-fill.m-1(type='button' data-filter='.collectibles') Collectibles  
+                button.mixitup-control.flex-fill.m-1(type='button' data-filter='.utility')  Utility
+
+            // Items Grid 
+            .row.mixitUpContainer.gy-4.mb-5
+                .col-xl-3.col-lg-4.col-md-6.mix.art
+                     +nftItem('item-1.jpg', 'author-1.jpg', 'A little tribute to tears', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.music
+                    +nftItem('item-2.jpg', 'author-2.jpg', 'Swag never gets out of style', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.collectibles
+                    +nftItem('item-3.jpg', 'author-3.jpg', 'Funky figure illustration', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.music
+                    +nftItem('item-4.jpg', 'author-4.jpg', 'Fantasizing promoting painting', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.art
+                    +nftItem('item-5.jpg', 'author-1.jpg', 'A beautiful frog', '0.08 ETH', '1/20', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.utility
+                    +nftItem('item-6.jpg', 'author-2.jpg', 'Tlaloc aztec deity', '0.05 ETH', '1/22', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.collectibles
+                    +nftItem('item-7.jpg', 'author-3.jpg', 'Nerdy cute girl', '0.06 ETH', '1/11', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+                .col-xl-3.col-lg-4.col-md-6.mix.art
+                    +nftItem('item-8.jpg', 'author-4.jpg', 'Portrait study', '0.03 ETH', '1/15', '0.081 ETH', '12Hrs ago', '42', 'card-hover-image')
+
+            // Load More Button 
+            .text-center
+                a.btn.btn-gradient-primary.px-4(href="#") 
+                    i.las.la-sync.me-2
+                    | Load More 

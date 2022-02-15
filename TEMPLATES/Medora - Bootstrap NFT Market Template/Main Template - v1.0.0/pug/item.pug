@@ -1,0 +1,129 @@
+extends _pug-includes/layout
+
+block vars 
+    - var itemDetails = true
+    - var heroPage = true
+    - var pageTitle = 'Item Details'
+
+block content
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+
+
+    // ITEM DETAILS SECTION 
+    section.py-5
+        .container.py-5
+            .row.mb-4.gy-4
+
+                // Item Image 
+                .col-lg-6
+                    .card.shadow
+                        .card-body
+                            img.img-fluid.rounded(src="img/item-lg.jpg", alt="...")
+
+                // Item Info 
+                .col-lg-6
+                    p.mb-2.text-muted Current price
+                        span.fw-bold.ms-3.badge.bg-primary 0.239 ETH
+                    h1 A little tribute to tears
+                    p.text-muted.mb-4 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+                    // Item Info List 
+                    .row.mb-4
+                        .col-xl-8
+                            .card.shadow-sm.rounded
+                                .card-body.p-4
+                                    ul.list-unstyled.text-sm.text-muted.mb-0
+                                        - var itemDetails = [['Item Artist', 'Monica Lucas', 'las la-user-circle'], ['Created', '22 Jun 2021', 'las la-clock'], ['Item Size', '2200 x 2500', 'las la-crop-alt'], ['Formats', 'MP4, JPEG', 'las la-photo-video'], ['Downloadable file', 'Yes', 'las la-save']]
+                                        each val, index in itemDetails
+                                            li.d-flex.align-items-center.justify-content-between(class=(index === itemDetails.length - 1 ? 'mb-0' : 'mb-2 pb-1'))
+                                                p.mb-0.d-flex.align-items-center
+                                                    i.text-primary(class=val[2])
+                                                    span.ms-2 #{val[0]}
+                                                p.mb-0.text-gray-muted #{val[1]}
+
+                    // Item Auction 
+                    h2.h5.mb-4 Auction Ending In
+                    .row
+                        .col-xl-8
+                            .card.rounded
+                                .card-body.p-1
+                                    +counter('7-12-2021', '12:00', 'item mb-2')
+                                    a.btn.btn-primary.w-100(href="#!") 
+                                        i.las.la-calendar-check.me-2
+                                        | Add to calendar 
+
+            .row.gy-4
+
+                // Item Author 
+                .col-12     
+                    ul.list-inline.d-flex.align-items-center
+                        li.list-inline-item.me-2
+                            a(href="#!") 
+                                img.img-fluid.rounded-circle.p-1.bg-dark(src=`img/authors/author-1.jpg`, alt="...", width="50")
+                        li.list-inline-item.me-3
+                            a.text-reset(href="#!") 
+                                h6.mb-0 Monica Lucas
+                        li.list-inline-item.d-flex.align-items-center
+                            .icon.bg-primary.me-2
+                                i.las.la-check-double.text-white.fw-bold
+                            span.text-muted.text-sm Verified user
+
+                // Item Info Tabs 
+                .col-lg-6
+
+                    // Tabs Navigation 
+                    .bg-dark.rounded.shadow-sm.p-1
+                        ul.nav.nav-pills.flex-column.flex-sm-row.mb-0#item-tab(role='tablist')
+                            li.nav-item.flex-sm-fill(role='presentation')
+                                button.nav-link.w-100.active#item-bids-tab(data-bs-toggle='pill' data-bs-target='#item-bids' type='button' role='tab' aria-controls='item-bids' aria-selected='true') Bids
+                            li.nav-item.flex-sm-fill(role='presentation')
+                                button.nav-link.w-100#item-description-tab(data-bs-toggle='pill' data-bs-target='#item-description' type='button' role='tab' aria-controls='item-description' aria-selected='false') Description
+                            li.nav-item.flex-sm-fill(role='presentation')
+                                button.nav-link.w-100#item-history-tab(data-bs-toggle='pill' data-bs-target='#item-history' type='button' role='tab' aria-controls='item-history' aria-selected='false') History
+
+                    // Tabs Content 
+                    .tab-content.py-3#item-tabContent
+
+                        // Bids Tab 
+                        .tab-pane.fade.show.active#item-bids(role='tabpanel' aria-labelledby='item-bids-tab')
+                            ul.list-unstyled
+                                +bid('2', 'Monica Lucas ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal', 'accepted')
+                                +bid('3', 'Mamie Barnett ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+                                +bid('4', 'Nicholas Daniels ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+                                +bid('5', 'Lori Hart ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+
+                        // Description Tab 
+                        .tab-pane.fade#item-description(role='tabpanel' aria-labelledby='item-description-tab')
+                            h6 Description:
+                            p.text-muted.text-sm Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum, sapiente dolor voluptatum deleniti sunt in natus aliquam libero. Totam, officiis porro? Quos dolor molestiae enim! Ipsa quaerat temporibus totam!
+                            p.text-muted.text-sm Fugit praesentium inventore earum excepturi minima laborum laudantium dolores vitae placeat!Nesciunt qui amet fuga beatae sequi ipsum eaque minus itaque id deserunt eum maxime perspiciatis reiciendis accusantium, aliquam illum deleniti. Minus ducimus eveniet repellendus, velit dolor est odit possimus! Modi.
+                        
+                        // History Tab 
+                        .tab-pane.fade#item-history(role='tabpanel' aria-labelledby='item-history-tab')
+                            +bid('2', 'Monica Lucas ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+                            +bid('3', 'Mamie Barnett ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+                            +bid('4', 'Nicholas Daniels ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+                            +bid('5', 'Lori Hart ', '0.005 ETH', '6/15/2021', '3:20 AM', 'mb-2 card-hover-minimal')
+
+                // Place a Bid & Share Item 
+                .col-lg-6
+                    .row
+                        .col-xl-8
+                            h2.h5.mb-2 Place a bid
+                            p.text-muted.text-sm.mb-4 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis id nobis dolor consequuntur.
+                            form.mb-5(action="#!") 
+                                .input-group.p-1.shadow-sm.rounded.bg-dark.founded
+                                    input.form-control.border-0.shadow-0.bg-dark(type="text", name="email", autocomplete="off", placeholder="Enter your bid...")
+                                    button.btn.btn-primary.btn-sm.rounded-sm(type='submit')
+                                        i.fas.fa-paper-plan
+                                        | Place bid
+                            
+                            h2.h5.mb-3 Share this item
+                            ul.list-inline
+                                each val in ['lab la-facebook-f', 'lab la-pinterest', 'lab la-twitter', 'las la-link']
+                                    li.list-inline-item
+                                        a.social-link(href="#") 
+                                            i(class=val)
+

@@ -1,0 +1,24 @@
+//- Explore Filter
+header.mb-4
+    form(action="#") 
+        ul.list-inline.d-flex.align-items-center.flex-wrap
+            li.list-inline-item.mb-2
+                .input-group.rounded.bd-3.bg-dark
+                    input.form-control.border-0.bg-none.shadow-0(type="search", name="email", placeholder="Search item here...")
+                    button.btn.btn-primary.btn-sm.m-1.rounded-sm(type='submit')
+                        i.las.la-search
+            li.list-inline-item.mb-2
+                select.all-categories-choices(name='allCategories', data-customclass="form-select border-dark bd-3 bg-dark")
+                    option(value="allCategories") All Categories 
+                    each val in ['Art', 'Music', 'Domain Names', 'Virtual Worlds' ,'Trading Cards', 'Collectibles', 'Utility']
+                        option(value=val.trim().toLowerCase()) #{val} 
+            li.list-inline-item.mb-2
+                select.all-auctions-choices(name='allAuctions', data-customclass="form-select border-dark bd-3 bg-dark")
+                    option(value="allAcutions") All Auctions 
+                    each val in ['Buy Now', 'Has Offer']
+                        option(value=val.trim().toLowerCase()) #{val} 
+            li.list-inline-item.mb-2
+                select.all-items-choices(name='allItems', data-customclass="form-select border-dark bd-3 bg-dark")
+                    option(value="allItems") All Items 
+                    each val in ['Single Items', 'Bundles']
+                        option(value=val.trim().toLowerCase()) #{val} 

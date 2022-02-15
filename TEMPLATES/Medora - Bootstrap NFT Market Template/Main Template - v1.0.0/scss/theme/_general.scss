@@ -1,0 +1,255 @@
+/* ==========================================
+    GENERAL
+========================================== */
+body {
+    overflow: hidden;
+}
+
+strong {
+    font-weight: $font-weight-bold;
+}
+
+.btn i {
+    transform: translateY(2px);
+}
+
+.la-sm {
+    font-size: 1.1rem !important;
+}
+
+.la-xs {
+    font-size: 0.8rem !important;
+}
+
+.la-2x {
+    font-size: 1.8rem !important;
+}
+
+.la-3x {
+    font-size: 2rem !important;
+}
+
+i.las,
+i.lab {
+    font-size: 1.3rem;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+a {
+    transition: all 0.3s;
+}
+
+.dropdown-toggle {
+    &::after {
+        content: "\f107";
+        border: none;
+        font-family: "Line Awesome Free";
+        vertical-align: middle;
+        font-weight: 900;
+        font-size: 0.7rem;
+    }
+}
+
+* {
+    outline: none !important;
+}
+
+*::-webkit-scrollbar {
+    width: 0.3em;
+}
+
+*::-webkit-scrollbar-track {
+    background: lighten($body-bg, 3%);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $primary;
+}
+
+.tooltip-inner {
+    background: lighten($body-bg, 5%);
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: lighten($body-bg, 5%);
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: lighten($body-bg, 5%);
+}
+
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: lighten($body-bg, 5%);
+}
+
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: lighten($body-bg, 5%);
+}
+
+::-moz-selection {
+    color: $gray-200;
+    background: lighten($body-bg, 7%);
+}
+
+::selection {
+    color: $gray-200;
+    background: lighten($body-bg, 7%);
+}
+
+[data-form="timedAuction"] {
+    display: none;
+}
+
+/* ==========================================
+    NAVBAR
+========================================== */
+.navbar {
+    transition: all 0.3s;
+    z-index: 999;
+
+    @include media-breakpoint-down(lg) {
+        background: darken($body-bg, 2%);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    &.navbar-active {
+        background: rgba(darken($body-bg, 2%), 0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        transform: none;
+    }
+
+    &.scrollUp {
+        transform: translateY(-101%);
+    }
+
+    .navbar-toggler {
+        border: none;
+        font-size: 0.9rem;
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    .dropdown-menu {
+        @include media-breakpoint-up(lg) {
+            margin-top: 1.6rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .navbar .dropdown-menu-end {
+        right: 0;
+        left: auto;
+    }
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        margin-top: 0;
+    }
+    .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: translateY(0.5rem);
+        transform-origin: 0% 0%;
+    }
+    .navbar .dropdown-menu.fade-up {
+        top: 180%;
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: 0.3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+    SCROLL TO TOP BUTTON 
+========================================== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: -2rem;
+    background: rgba($body-bg, 0.8);
+    padding: 0.5rem 1rem;
+    z-index: 995;
+    transform-origin: bottom left;
+    transform: rotate(-90deg) translateY(250%);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        background: darken($body-bg, 5%);
+    }
+    &.is-visible {
+        right: 1rem;
+    }
+}
+
+/* ==========================================
+    COUNTERS
+========================================== */
+.counter {
+    background: $body-bg;
+    position: relative;
+    border-radius: 0.5rem;
+
+    &::before {
+        content: "";
+        width: calc(100% - 1rem);
+        height: 3rem;
+        border-radius: 0.5rem;
+        // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        background: $card-bg;
+    }
+}
+.counter-item {
+    width: 25%;
+    z-index: 10;
+    position: relative;
+    .num {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+        color: $info;
+        &::before {
+            content: "•";
+            position: absolute;
+            top: 50%;
+            right: -3px;
+            display: block;
+            line-height: 0;
+            transform: translateY(-50%);
+            color: $text-muted;
+        }
+    }
+
+    &:last-of-type {
+        .num {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

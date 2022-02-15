@@ -1,6 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dfdfdf;
+}
+
 main {
     width: 90vw;
     margin: auto;
+    
 }
 
 * {
@@ -13,6 +19,10 @@ main {
 }
 
 #videoConteiner h2 {
+
+ color: #000000; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555;
+    
+
     width: fit-content;
     margin: auto;
 }
@@ -38,6 +48,24 @@ main {
     width: fit-content;
     margin: auto;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#search form input {
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+#search-btn{
+    background-color: #162d55;
+    border-radius: 3px;
+    height: 40px;
+    border-radius: 8px;
 }
 
 #featuredProducts h2 {
@@ -71,7 +99,7 @@ main {
 }
 
 #myCarousel {
-    width: 700px;
+    width: 1000px;
     margin: auto;
 }
 
@@ -81,7 +109,9 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     height: 500px;
-    margin-top: 20px;
+    margin-top: 100px;
+    background-color: #e9ecef;
+    padding: 15px;
 }
 
 
@@ -123,7 +153,7 @@ article a {
     top: -15px;
 }
 #launch{
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 #launch h2{
@@ -132,6 +162,6 @@ article a {
     margin-bottom: 20px;
 }
 #launch p{
-    width: fit-content;
+    width: 80%;
     margin: auto;
 }

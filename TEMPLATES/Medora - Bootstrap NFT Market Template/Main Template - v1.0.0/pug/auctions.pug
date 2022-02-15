@@ -1,0 +1,67 @@
+extends _pug-includes/layout
+
+block vars 
+    - var auctions = true
+    - var heroPage= true
+    - var pageTitle = 'Live Auctions'
+
+block content
+
+    //- Hero Section
+    include _pug-includes/page-hero.pug
+    
+
+    // AUCTIONS SECTION
+    section.py-5
+        .container.py-5
+            .row.mb-5
+
+                // Trending Auction
+                .col-xl-7.col-md-8.mx-auto.mb-4
+                    header.mb-5.text-center
+                        h2 Trending Auction
+                        p.text-muted Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo est ad modi incidunt tenetur fugit nam doloribus porro facere.
+
+                    +horizontalAucItem('item-1.jpg', 'author-1.jpg', 'A little tribute to tears', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.', '0.08 ETH', '1/20', '14-12-2021', '12:00', 'auc')
+
+            
+            // Auctions Header
+            header.mb-5.text-center
+                .row
+                    .col-lg-7.mx-auto
+                        h2 Live Auctions
+                        p.text-muted Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo est ad modi incidunt tenetur fugit nam doloribus porro facere.
+
+            // Auctions Grid
+            .row.gy-4.mb-5
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-12.jpg', 'author-1.jpg', 'Feeding time', '0.08 ETH', '1/20', '14-12-2021', '12:00', '1', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-11.jpg', 'author-2.jpg', 'Metaverse Goddess', '0.05 ETH', '1/22', '18-11-2021', '12:00', '2', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-10.jpg', 'author-3.jpg', 'Funky fashion', '0.06 ETH', '1/11', '15-1-2022', '12:00', '3', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-9.jpg', 'author-4.jpg', 'Modern abstract art', '0.03 ETH', '1/15', '14-7-2022', '12:00', '4', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-8.jpg', 'author-1.jpg', 'Portrait study', '0.08 ETH', '1/20', '14-12-2021', '12:00', '5', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-7.jpg', 'author-2.jpg', 'Nerdy cute girl', '0.05 ETH', '1/22', '18-11-2021', '12:00', '6', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-6.jpg', 'author-3.jpg', 'Tlaloc aztec deity', '0.06 ETH', '1/11', '15-1-2022', '12:00', '7', '')
+                .col-xl-3.col-lg-4.col-md-6
+                    +auctionItem('item-5.jpg', 'author-4.jpg', 'A beautiful frog', '0.03 ETH', '1/15', '14-7-2022', '12:00', '8', '')
+
+
+
+            // Navigation
+            nav(aria-label='Page navigation example')
+                ul.pagination.mb-0.justify-content-center
+                    li.page-item
+                        a.page-link(href='#!' aria-label='Previous')
+                            span(aria-hidden='true') «
+                    each val, index in [1, 2, 3, 4, 5, 6]
+                        li.page-item(class=(index == 2 ? 'active' : ''))
+                            a.page-link(href='#!') #{val}
+                    li.page-item
+                        a.page-link(href='#!' aria-label='Next')
+                            span(aria-hidden='true') »

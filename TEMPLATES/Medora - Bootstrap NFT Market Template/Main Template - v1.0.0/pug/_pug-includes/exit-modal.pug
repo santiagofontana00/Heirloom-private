@@ -1,0 +1,28 @@
+// Exit Intent Modal
+.modal.fade#exitModal(aria-hidden='true', tabindex='-1')
+    .modal-dialog.modal-dialog-centered.modal-xl(role='document')
+        .modal-content.border-0.bg-dark.rounded-0.shadow-lg
+            .modal-body.p-0
+                .row.gx-0.align-items-stretch
+
+                    // Modal Info Block
+                    .col-lg-6.bg-map
+                        .p-5.my-lg-5.position-relative
+                            .bg-primary.position-absolute.top-0.end-0.z-index-50.p-1.d-block.d-lg-none
+                                button.btn-close.btn-close-white.p-2.shadow-0.opacity-10(type='button', data-bs-dismiss='modal', aria-label='Close')
+                            h3.h2 Subscribe to our newsletter to get updates about our auctions
+                            p.text-muted.mb-4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            form(action="#")
+                                .input-group
+                                    .input-group-text.bg-dark.border-end-0
+                                        i.las.la-envelope.text-primary
+                                    input.form-control.shadow-0.bg-dark.border-end-0.border-start-0(name='email', placeholder='youremail@example.com', autocomplete='off')
+                                    button.btn.btn-sm.btn-primary.px-3(type='submit')
+                                        i.las.la-paper-plane
+
+                    // Modal Image Block
+                    .col-lg-6.d-none.d-lg-block
+                        .h-100.position-relative(style="background: url(img/modal-img.jpg) no-repeat; background-size: cover")
+                            .bg-primary.position-absolute.top-0.end-0.z-index-50
+                                button.btn.btn-primary.btn-sm.p-2.shadow-0.opacity-10(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                    i.las.la-times
