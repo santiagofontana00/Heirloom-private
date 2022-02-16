@@ -121,7 +121,23 @@
     <section class="py-5">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-8">                    
+                <div class="col-lg-8">
+
+                    <!-- Upload File Header -->
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon icon-md me-2 flex-shrink-0 bg-primary rounded-sm text-white"><i
+                                class="las la-cloud-upload-alt"></i></div>
+                        <h2 class="h5 mb-0">Upload file</h2>
+                    </div>
+
+                    <!-- Upload File Form -->
+                    <form class="dropzone rounded bg-dark d-flex justify-content-center mb-5" id="demo-upload"
+                        action="/upload">
+                        <div class="dz-message py-5">
+                            <i class="las la-image la-3x text-muted"></i>
+                            <p class="text-muted">Drop files here or click to upload.</p>
+                        </div>
+                    </form>
 
                     <!-- Select Method Header-->
                     <div class="d-flex align-items-center mb-4">
@@ -206,13 +222,74 @@
                             <!-- Open For Bids Method Elements -->
                             <div class="col-12 mb-2" data-form="openForBids">
                                 <div class="row gy-3">
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="title"> Title</label>
+                                        <div class="input-group">
+                                            <div class="input-group-text border-end-0 pe-0 bd-dark-lighter bg-none"><i
+                                                    class="text-primary las la-user-edit"></i></div>
+                                            <input class="form-control shadow-0 border-start-0 bd-dark-lighter bg-none"
+                                                type="text" autocomplete="off" name="title" id="title"
+                                                placeholder="e.g. Crypto Funk" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="description"> Description</label>
+                                        <textarea class="form-control shadow-0 bd-dark-lighter bg-none" rows="3"
+                                            name="description" id="description"
+                                            placeholder="e.g. This is a very cool item"></textarea>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="refferer"> Refferer</label>
+                                        <div class="input-group">
+                                            <div class="input-group-text border-end-0 pe-0 bd-dark-lighter bg-none"><i
+                                                    class="text-primary las la-user-edit"></i></div>
+                                            <input class="form-control shadow-0 border-start-0 bd-dark-lighter bg-none"
+                                                type="text" autocomplete="off" name="refferer" id="refferer"
+                                                placeholder="e.g. Crypto Funk" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="licenseAmount"> Number of licenses
+                                            to sell</label>
+                                        <div class="input-group">
+                                            <div class="input-group-text border-end-0 pe-0 bd-dark-lighter bg-none"><i
+                                                    class="text-primary las la-hand-holding-usd"></i></div>
+                                            <input class="form-control shadow-0 border-start-0 bd-dark-lighter bg-none"
+                                                type="text" autocomplete="off" name="licenseAMoubnt" id="licenseAMoubnt"
+                                                placeholder="Enter license amount" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="licenseId"> License ID</label>
+                                        <div class="input-group">
+                                            <div class="input-group-text border-end-0 pe-0 bd-dark-lighter bg-none">
+                                            </div>
+                                            <input class="form-control shadow-0 border-start-0 bd-dark-lighter bg-none"
+                                                type="text" autocomplete="off" name="licenseId" id="licenseId"
+                                                placeholder="Place ID" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="form-label text-gray-400" for="royalties"> Royalties</label>
+                                        <div class="input-group">
+                                            <div class="input-group-text border-end-0 pe-0 bd-dark-lighter bg-none"><i
+                                                    class="text-primary las la-percentage"></i></div>
+                                            <input class="form-control shadow-0 border-start-0 bd-dark-lighter bg-none"
+                                                type="text" autocomplete="off" name="royalties" id="royalties"
+                                                placeholder="Suggested: 0, 10%, 20%, 30%, maximum 70%" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Submit -->
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit"><i
-                                        class="las la-plus-circle me-2"></i>Publish Item</button>
+                                        class="las la-plus-circle me-2"></i>Create Item</button>
                             </div>
 
                         </div>
